@@ -1,16 +1,17 @@
-import Header from "@/components/Header"
+import { Navbar } from "@/components"
+import { Outlet } from "react-router-dom"
 
-type Props = {
-    children: React.ReactNode
-}
+// type Props = {
+//     children: React.ReactNode
+// }
 
 
-const Layout = ({children}: Props) => {
+const Layout = () => {
   return (
     <div>
-        <Header />
-        <div>
-            {children}
+        <Navbar />
+        <div className="">
+          <div> {<Outlet />}</div>
         </div>
     </div>
   )
