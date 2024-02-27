@@ -18,9 +18,9 @@ const NavBar = () => {
 
       <ul className={`${toggle ? 'hidden' : 'md:flex'} list-none hidden gap-6 justify-end items-center flex-1`}>
         {[
-          { path: '/', text: 'Qui sommes-nous ?' },
-          { path: '/Service', text: 'Services Offerts' },
-          { path: '/Evacuation', text: 'Évacuation sanitaire' },
+          { path: '/About-us', text: 'Qui sommes-nous ?' },
+          { path: '/Service-offert', text: 'Services Offerts' },
+          { path: '/Evacuation-Sanitaire', text: 'Évacuation sanitaire' },
           { path: '/Formulaire', text: 'Formulaire à remplir' },
           { path: '/Prestations', text: 'Prestations et Prix' }
         ].map((item) => (
