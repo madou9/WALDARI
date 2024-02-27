@@ -43,9 +43,9 @@ const NavBar = () => {
       <div className={`${!toggle ? 'hidden': 'flex'} sidebar absolute bg-secondaryBackground p-6 top-20 right-0 mx-4 my-2 min-w-[200px]`}>
         <ul className="list-none flex justify-end gap-6 flex-1 items-start flex-col">
           {[
-            { path: '/', text: 'Qui sommes-nous ?' },
-            { path: '/Service', text: 'Services Offerts' },
-            { path: '/Evacuation', text: 'Évacuation sanitaire' },
+            { path: '/About-us', text: 'Qui sommes-nous ?' },
+            { path: '/Service-offert', text: 'Services Offerts' },
+            { path: '/Evacuation-Sanitaire', text: 'Évacuation sanitaire' },
             { path: '/Formulaire', text: 'Formulaire à remplir' },
             { path: '/Prestations', text: 'Prestations et Prix' }
           ].map((item) => (
