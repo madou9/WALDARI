@@ -12,8 +12,8 @@ const Hero = () =>
             <div className="flex flex-col flex-1 items-center md:items-start sm:px-16 px-6">
                     {/* premier paragraph */}
                 <div className="flex flex-row justify-center items-center w-full">
-                    <h1 className="flex-1 font-poppins text-center md:text-left font-bold text-[52px] leading-[75px]">
-                        <span className="text-zinc-800 text-6xl font-semibold tracking-tight">Accompagnement</span>
+                    <h1 className="flex-1 font-poppins text-center md:text-left font-bold text-[43px] leading-[75px]">
+                        <span className="text-zinc-800 text-[43px] font-semibold tracking-tight">Accompagnement</span>
                         <br />
                         <span className="text-green-400 "> Tout au long</span>
                         <span className="text-zinc-800"> de votre Parcours </span>
