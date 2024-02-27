@@ -9,7 +9,7 @@ const Navbar = () => {
   const { pathname } = useLocation()  
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className={`${styles.paddingX} w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 z-[5] `}>
+    <nav className={`${styles.paddingX} w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 z-[5]`}>
       <Link to={'/'}>
         <h3 className='text-green-500 font-poppins font-bold text-2xl lg:text-4xl pl-4 lg:pl-0'>WALDARI</h3>
       </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
         />
 
         <div
-          className={`${toggle ? 'flex' : 'hidden'} bg-green-500 absolute top-16 right-0 mx-4 my-2 min-w-[140px] sidebar`}>
+          className={`${toggle ? 'flex' : 'hidden'} bg-primary absolute top-16 right-0 mx-4 my-2 min-w-[140px] sidebar`}>
           <ul className="list-none border rounded-xl border-green-500 flex flex-col justify-end w-full items-left flex-1">
             <NavLink className={`${pathname ===  '/' ? 'bg-white font-semibold text-green-500' : 'text-white'} font-poppins font-normal py-3 px-5 cursor-pointer text-[16px] w-full`} to={`/`}>
               Accueil
