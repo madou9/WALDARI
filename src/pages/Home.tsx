@@ -14,8 +14,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className={`bg-white container ${styles.paddingX}, ${styles.flexStart}`}>
-          <motion.div animate>
+      <div className={`bg-white ${styles.paddingX}, ${styles.flexStart}`}>
+          <motion.div   animate
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }} 
+            className={`${styles.boxWidth}`}>
             <WhyChooseUs />
           </motion.div>
       </div>

@@ -8,9 +8,9 @@ import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
-    <div>
+    <div className="flex flex-col overflow-hidden">
         <Navbar />
-        <div className="">
+        <div className="flex-1">
           <div> {<Outlet />}</div>
         </div>
     </div>

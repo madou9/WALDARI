@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import { close, menu } from '../assets';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import styles from '@/styles';
 
 const Navbar = () => {
 
   const { pathname } = useLocation()  
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className={` w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 `}>
+    <nav className={`${styles.paddingX} w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 z-[5] `}>
       <Link to={'/'}>
         <h3 className='text-green-500 font-poppins font-bold text-2xl lg:text-4xl pl-4 lg:pl-0'>WALDARI</h3>
       </Link>
