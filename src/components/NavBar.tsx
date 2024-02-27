@@ -11,9 +11,11 @@ const NavBar = () => {
   
   return (
     <nav className={`${styles.paddingX} w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 z-[5]`}>
+      
       <Link to={'/'}>
         <h3 className='text-green-500 font-poppins font-bold text-2xl lg:text-4xl lg:pl-0'>WALDARI</h3>
       </Link>
+
       <ul className={`${toggle ? 'hidden' : 'md:flex'} list-none hidden gap-6 justify-end items-center flex-1`}>
         {[
           { path: '/', text: 'Qui sommes-nous ?' },

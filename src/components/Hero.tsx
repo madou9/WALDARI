@@ -7,7 +7,7 @@ import { profile } from "@/assets"
 
 const Hero = () =>
   (
-    <section className={`${styles.paddingY} flex flex-col md:flex-row mt-24 md:mt-14 items-center padding`}>
+    <section id="home" className={`${styles.paddingY} flex flex-col md:flex-row mt-24 md:mt-14 items-center padding`}>
 
             <div className="flex flex-col flex-1 items-center md:items-start sm:px-16 px-6">
                     {/* premier paragraph */}
@@ -30,7 +30,7 @@ const Hero = () =>
                 </Link>
             </div>
             <motion.div animate={{ y: [0, 25, 25, 0] }}  transition={{ repeat:Infinity, duration: 3 }} id='heroimage' className={`flex-1 flex ${styles.flexCenter} md:my-0 my-14 relative`}>
-                <img src={profile} className="w-[100%] h-[100%] md-[90%] relative" />
+                <img src={profile} className="w-[100%] h-[100%] md:w-[90%] md:h-[90%] relative" />
             </motion.div>
             
     </section>
