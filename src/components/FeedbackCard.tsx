@@ -1,12 +1,11 @@
 import { quotes } from '@/assets'
 import { motion } from 'framer-motion'
-import React from 'react'
 
 type Props = {
   name: string,
   title: string,
   content: string,
-  img: React.ReactNode,
+  img: string,
   alt: string
 }
 

@@ -1,4 +1,4 @@
-import { homestay, hospital, mission, passport } from '@/assets'
+import { mission } from '@/assets'
 import Footer from '@/components/Footer'
 import { Services } from '@/constants'
 import styles from '@/styles'
