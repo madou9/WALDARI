@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { RiMenu5Line } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useEffect } from 'react'; // Ajout pour fermer le menu mobile lorsque la page change
+import { useEffect, useState } from 'react'; // Ajout pour fermer le menu mobile lorsque la page change
 
 const NavBar = () => {
   const { pathname } = useLocation();

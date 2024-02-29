@@ -19,7 +19,7 @@ const Testimonials = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FeedbackCard {...card} />
+            <FeedbackCard  alt={'card'} {...card} />
           </motion.div>
         ))}
       </div>
