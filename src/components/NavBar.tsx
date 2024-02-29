@@ -1,65 +1,85 @@
-
+import React, { useState } from 'react';
 import { RiMenu5Line } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useState } from "react";
-import styles from "@/styles";
+import { useEffect } from 'react'; // Ajout pour fermer le menu mobile lorsque la page change
 
 const NavBar = () => {
   const { pathname } = useLocation();
-  const [toggle, setToggle] =  useState(false);
-  
+  const [toggle, setToggle] = useState(false);
+
+  // Fonction pour fermer le menu mobile lorsque la page change
+  useEffect(() => {
+    setToggle(false);
+  }, [pathname]);
+
   return (
-    <nav className={`${styles.paddingX} w-full flex fixed top-0 bg-white justify-between items-center py-6 navbar border-b border-green-500 z-[5]`}>
-      
-      <Link to={'/'}>
-        <h3 className='text-green-500 font-poppins font-bold text-2xl lg:text-4xl lg:pl-0'>WALDARI</h3>
-      </Link>
-
-      <ul className={`${toggle ? 'hidden' : 'md:flex'} list-none hidden gap-6 justify-end items-center flex-1`}>
-        {[
-          { path: '/About-us', text: 'Qui sommes-nous ?' },
-          { path: '/Service-offert', text: 'Services Offerts' },
-          { path: '/Evacuation-Sanitaire', text: 'Évacuation sanitaire' },
-          { path: '/Formulaire', text: 'Formulaire à remplir' },
-          { path: '/Prestations', text: 'Prestations et Prix' }
-        ].map((item) => (
-          <li key={item.path} className="font-poppins text-l font-medium text-white hover:text-accentColor hover:scale-[1.05]">
-            <NavLink
-              className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}
-              to={item.path}
+    <nav className="w-full fixed top-0 bg-white shadow-md z-[5]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <Link to={'/'} className="text-green-500 font-poppins font-bold text-2xl">
+            WALDARI
+          </Link>
+          <div className="md:hidden">
+            <button
+              type="button"
+              className="text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500"
+              aria-label="Toggle menu"
+              onClick={() => setToggle(!toggle)}
             >
-              {item.text}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
-      <div className="md:hidden flex items-center">
-        <RiMenu5Line className={`${!toggle ? 'flex': 'hidden'} text-dark`} fontSize={32} onClick={()=>{setToggle(!toggle)}} />
-        <AiOutlineClose className={`${toggle ? 'flex': 'hidden'} text-accentColor`} fontSize={24} onClick={()=>{setToggle(!toggle)}} />
+              {toggle ? (
+                <AiOutlineClose className="w-6 h-6" />
+              ) : (
+                <RiMenu5Line className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+          <div className="hidden md:flex-1 md:flex md:items-center md:justify-end">
+            <ul className="flex items-center space-x-8">
+              {[
+                { path: '/', text: 'Acceuil' },
+                { path: '/Service', text: 'Services' },
+                { path: '/Avantages', text: 'Evacuation sanitaire' },
+                { path: '/Procédure', text: 'Procédure' },
+                { path: '/Destinations', text: 'Destinations' },
+                { path: '/Contact', text: 'Contact' }
+              ].map((item) => (
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}
+                  >
+                    {item.text}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div className={`${!toggle ? 'hidden': 'flex'} sidebar absolute bg-secondaryBackground p-6 top-20 right-0 mx-4 my-2 min-w-[200px]`}>
-        <ul className="list-none flex justify-end gap-6 flex-1 items-start flex-col">
-          {[
-            { path: '/About-us', text: 'Qui sommes-nous ?' },
-            { path: '/Service-offert', text: 'Services Offerts' },
-            { path: '/Evacuation-Sanitaire', text: 'Évacuation sanitaire' },
-            { path: '/Formulaire', text: 'Formulaire à remplir' },
-            { path: '/Prestations', text: 'Prestations et Prix' }
-          ].map((item) => (
-            <li key={item.path} className="font-poppins text-l font-semibold text-green-500">
+      {/* Menu déroulant mobile */}
+      {toggle && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {[
+                { path: '/', text: 'Acceuil' },
+                { path: '/Service', text: 'Services' },
+                { path: '/Avantages', text: 'Evacuation sanitaire' },
+                { path: '/Procédure', text: 'Procédure' },
+                { path: '/Destinations', text: 'Destinations' },
+                { path: '/Contact', text: 'Contact' }
+            ].map((item) => (
               <NavLink
-                className={`${pathname === item.path ? ' font-semibold ' : 'text-white'} hover:text-green-500 hover:font-semibold`}
+                key={item.path}
                 to={item.path}
+                className="font-semibold text-green-500 block px-3 py-2 rounded-md text-base font-medium text-black hover:text-green-500"
               >
                 {item.text}
               </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

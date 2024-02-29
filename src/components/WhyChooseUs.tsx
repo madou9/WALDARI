@@ -29,7 +29,7 @@ const WhyChooseUs = () => (
     <motion.section initial={{ opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} className={layout.section}>
       <div className={layout.sectionInfo}>
         <h2 className={`${styles.heading2} text-center md:text-left px-4 md:px-0`}>
-            Pourquoi Nous choisir  <br className="sm:block hidden"/>opter pour nos services
+            Pourquoi Nous choisir ?  <br className="sm:block hidden"/>Découvrez les avantages de nos services
         </h2>
         <div className={`flex-col ${layout.sectionImg}`}>
             {features.map((feature, index) =>(

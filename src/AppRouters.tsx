@@ -8,7 +8,7 @@ const AppRouters = () => {
     <Routes>
         <Route path="/" element={<Layout />}  >
         <Route index element={<Home />} />
-        <Route path="/About-us" element={<AboutUse />} />
+        <Route path="/Service" element={<AboutUse />} />
         {/* <Route path="/Evacuation-Sanitaire" element={<Evacuation />} />
         <Route path="/Formulaire" element={<Formulaire />}/>
         <Route path="/Service-offert" element={<Services />} /> */}
