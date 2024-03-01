@@ -4,7 +4,7 @@ import { footerLinks} from '../constants';
 import styles from '../styles'
 
 const Footer = () =>  (
-  <section className={`${styles.flexCenter} ${styles.paddingY} bg-green-300 flex-col`}>
+  <section className={`${styles.flexCenter} ${styles.paddingY} bg-green-800 flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full px-6 md:px-16`}>
       <div className='flex-1 flex flex-col justify-start mr-10'>
         <h3 className='text-white font-poppins font-bold text-4xl lg:text-4xl'>Waldari</h3>

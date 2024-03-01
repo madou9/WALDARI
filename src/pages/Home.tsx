@@ -1,4 +1,5 @@
 import { WhyChooseUs } from "@/components"
+import CTA from "@/components/CTA"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import Stats from "@/components/Stats"
@@ -29,11 +30,19 @@ const Home = () => {
           </motion.div>
       </div>
 
+       <div className={`${styles.flexStart}`}>
+         <div className={`${styles.boxWidth}`}>
+           <CTA />
+         </div>
+       </div>
+
       <div className={`${styles.flexStart}`}>
          <div className={`${styles.boxWidth}`}>
            <Footer />
          </div>
        </div>
+
+      
     </div>
   )
 }

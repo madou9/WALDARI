@@ -71,7 +71,7 @@ const NavBar = () => {
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="font-semibold text-green-500 block px-3 py-2 rounded-md text-base font-medium text-black hover:text-green-500"
+                className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} block px-3 py-2 rounded-md text-base hover:text-green-500 hover:font-semibold`}
               >
                 {item.text}
               </NavLink>
