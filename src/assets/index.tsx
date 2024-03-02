@@ -14,6 +14,7 @@ import quotes from "./double-quotes.png"
 import facebook from "./black-facebook.png"
 import instagram from "./black-instagram.png"
 import twitter from "./black-twitter.png"
+import evacuationIcon from "./EvaImage.jpeg"
 
 export {
     menu,
@@ -31,5 +32,6 @@ export {
     quotes,
     facebook,
     instagram,
-    twitter
+    twitter,
+    evacuationIcon
 }

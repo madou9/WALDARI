@@ -38,7 +38,7 @@ const NavBar = () => {
               {[
                 { path: '/', text: 'Acceuil' },
                 { path: '/Service', text: 'Services' },
-                { path: '/Avantages', text: 'Evacuation sanitaire' },
+                { path: '/Evacuation-Sanitaire', text: 'Evacuation sanitaire' },
                 { path: '/Procédure', text: 'Procédure' },
                 { path: '/Destinations', text: 'Destinations' },
                 { path: '/Contact', text: 'Contact' }
@@ -63,7 +63,7 @@ const NavBar = () => {
             {[
                 { path: '/', text: 'Acceuil' },
                 { path: '/Service', text: 'Services' },
-                { path: '/Avantages', text: 'Evacuation sanitaire' },
+                { path: '/Evacuation-Sanitaire', text: 'Evacuation sanitaire' },
                 { path: '/Procédure', text: 'Procédure' },
                 { path: '/Destinations', text: 'Destinations' },
                 { path: '/Contact', text: 'Contact' }
