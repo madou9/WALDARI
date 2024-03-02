@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { evacuationIcon } from '@/assets';
 import styles from '@/styles';
 import { evacuationInfo } from '@/constants';
