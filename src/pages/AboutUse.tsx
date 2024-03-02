@@ -111,6 +111,12 @@ const AboutUse = () => {
             </div>
         </div>
 
+        {/* footer */}
+        <div className={`${styles.flexStart}`}>
+         <div className={`${styles.boxWidth}`}>
+           <Footer />
+         </div>
+       </div>
 
     </div>
   )
