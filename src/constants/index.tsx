@@ -127,21 +127,30 @@ export const feedback = [
     },
   ];
   
-
-  // export const stats = [
-  //   {
-  //     id: "stats-1",
-  //     title: "ZONES COVERED",
-  //     value: "20+",
-  //   },
-  //   {
-  //     id: "stats-2",
-  //     title: "HAPPY CUSTOMERS",
-  //     value: "2000+",
-  //   },
-  //   {
-  //     id: "stats-2",
-  //     title: "HAPPY CUSTOMERS",
-  //     value: "2000+",
-  //   },
-  // ];
+  export const evacuationInfo = [
+    {
+      title: 'Tourisme Médical en Égypte',
+      content: "L'Égypte a tous les moyens pour être la première destination pour le tourisme médical en Afrique et au Moyen-Orient. Le pays a énormément investi dans ce secteur au point d'en faire la première destination dans le tourisme de la santé.",
+    },
+    {
+      title: 'Coût des Soins Médicaux',
+      content: "L'Égypte compte environ 600 grands hôpitaux de niveau international. Parallèlement, le coût des soins médicaux est de loin plus faible comparativement à d'autres pays. Tout comme le coût de la vie et surtout l'accueil des touristes très peu soumis aux comportements racistes.",
+    },
+    {
+      title: 'Transparence des Coûts',
+      content: "Chaque évacuation donne lieu à un ensemble de services variés, qui sont tous décrits en détail dans le devis avec leur coût associé.",
+    },
+    {
+      title: 'Un Réseau International',
+      content: "Des relations avec les meilleurs établissements, en fonction des pathologies, pour faciliter la réception des patients évacués.",
+    },
+    {
+      title: 'Support 24h/24',
+      content: "Nos équipes sont disponibles pour répondre à vos questions sur le processus d'évacuation afin d'optimiser vos soins.",
+    },
+    {
+      title: 'Support pour le Patient',
+      content: "De l'assistance pour obtenir le visa à la réception de l'équipe médicale et à l'arrivée dans le service approprié.",
+    },
+  ];
+  
