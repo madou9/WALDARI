@@ -2,6 +2,7 @@ import { WhyChooseUs } from "@/components"
 import CTA from "@/components/CTA"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
+import Secteur from "@/components/Secteur"
 import Stats from "@/components/Stats"
 import Testimonials from "@/components/Testimonials"
 import styles from "@/styles"
@@ -16,6 +17,7 @@ const Home = () => {
         <div className={`${styles.boxWidth}`}>
             <Hero />
             <Stats />
+            <Secteur />
         </div>
       </div>
 

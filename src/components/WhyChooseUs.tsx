@@ -26,23 +26,24 @@ const FeaturesCard = ({ icon, title, content, index }: Props) => {
 }
 
 const WhyChooseUs = () => (
-    <motion.section initial={{ opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} className={layout.section}>
-      <div className={layout.sectionInfo}>
-        <h2 className={`${styles.heading2} text-center md:text-left px-4 md:px-0`}>
-            Pourquoi Nous choisir ?  <br className="sm:block hidden"/>Découvrez les avantages de nos services
-        </h2>
-        <div className={`flex-col ${layout.sectionImg}`}>
-            {features.map((feature, index) =>(
-              <FeaturesCard icon={feature.icon} 
-              title={feature.title} content={feature.content} 
-              key={feature.id} index={index} />
-            ))}         
-        </div>
+  <motion.section initial={{ opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} className={layout.section}>
+    <div className={layout.sectionInfo}>
+
+      <h2 className={`${styles.heading2} text-center md:text-left px-4 md:px-0`}>
+        Pourquoi Nous choisir ?  <br className="sm:block hidden"/>Découvrez les avantages de nos services
+      </h2>
+      <div className={`flex-col ${layout.sectionImg}`}>
+        {features.map((feature, index) =>(
+          <FeaturesCard icon={feature.icon} 
+            title={feature.title} content={feature.content} 
+            key={feature.id} index={index} />
+        ))}         
       </div>
-      <div className={layout.sectionImg}>
-              <img src={egypt} alt="egypt" className="w-[100%] contain h-[100%] md:h-[90%] md:w-[90%] px-4 md:px-0"/>
-      </div>
-    </motion.section>
+    </div>
+    <div className={layout.sectionImg}>
+      <img src={egypt} alt="egypt" className="w-[100%] contain h-[100%] md:h-[90%] md:w-[90%] px-4 md:px-0"/>
+    </div>
+  </motion.section>
 )
 
 export default WhyChooseUs

@@ -1,16 +1,20 @@
 import { RiMenu5Line } from "react-icons/ri";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react'; // Ajout pour fermer le menu mobile lorsque la page change
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
   const { pathname } = useLocation();
   const [toggle, setToggle] = useState(false);
+  const [showSubPages, setShowSubPages] = useState<number | null>(null); // Définir le type de showSubPages
 
-  // Fonction pour fermer le menu mobile lorsque la page change
   useEffect(() => {
     setToggle(false);
   }, [pathname]);
+
+  const handleSubPagesToggle = (index: number) => { // Définir le type de index
+    setShowSubPages((prev) => (prev === index ? null : index));
+  };
 
   return (
     <nav className="w-full fixed top-0 bg-white shadow-md z-[5]">
@@ -36,45 +40,113 @@ const NavBar = () => {
           <div className="hidden md:flex-1 md:flex md:items-center md:justify-end">
             <ul className="flex items-center space-x-8">
               {[
-                { path: '/', text: 'Acceuil' },
-                { path: '/Service', text: 'Services' },
-                { path: '/Evacuation-Sanitaire', text: 'Evacuation sanitaire' },
-                { path: '/Procédure', text: 'Procédure' },
-                { path: '/Destinations', text: 'Destinations' },
+                { path: '/', text: 'Accueil' },
+                { path: '/Services', text: 'Services' },
+                { path: '/A-propos', text: 'A Propos', subPages: [
+                  { path: '/A-propos/sejours', text: 'Séjours' },
+                  { path: '/A-propos/hotel', text: 'Hôtel' },
+                  { path: '/A-propos/clinique', text: 'Clinique' }
+                ] },
+                { path: '/Intervention', text: 'Intervention', subPages: [
+                  { path: '/Intervention/page1', text: 'Page 1' },
+                  { path: '/Intervention/page2', text: 'Page 2' },
+                  { path: '/Intervention/page3', text: 'Page 3' }
+                ] },
+                { path: '/Blog', text: 'Blog' },
                 { path: '/Contact', text: 'Contact' }
-              ].map((item) => (
+              ].map((item, index) => (
                 <li key={item.path}>
-                  <NavLink
-                    to={item.path}
-                    className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}
-                  >
-                    {item.text}
-                  </NavLink>
+                  {item.subPages ? (
+                    <div className="relative">
+                      <span
+                        className={`${pathname.startsWith(item.path) ? 'font-semibold text-green-500' : 'text-black'} flex items-center justify-between hover:text-green-500 hover:font-semibold`}
+                        onClick={() => handleSubPagesToggle(index)}
+                      >
+                        <span>{item.text}</span>
+                        <AiOutlineDown className="w-4 h-4 ml-1" />
+                      </span>
+                      {showSubPages === index && (
+                        <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg">
+                          {item.subPages.map((subPage) => (
+                            <li key={subPage.path}>
+                              <NavLink
+                                to={subPage.path}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              >
+                                {subPage.text}
+                              </NavLink>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <NavLink
+                      to={item.path}
+                      className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}
+                    >
+                      {item.text}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-      {/* Menu déroulant mobile */}
       {toggle && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {[
-                { path: '/', text: 'Acceuil' },
-                { path: '/Service', text: 'Services' },
-                { path: '/Evacuation-Sanitaire', text: 'Evacuation sanitaire' },
-                { path: '/Procédure', text: 'Procédure' },
-                { path: '/Destinations', text: 'Destinations' },
-                { path: '/Contact', text: 'Contact' }
-            ].map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} block px-3 py-2 rounded-md text-base hover:text-green-500 hover:font-semibold`}
-              >
-                {item.text}
-              </NavLink>
+              { path: '/', text: 'Accueil' },
+              { path: '/Services', text: 'Services' },
+              { path: '/A-propos', text: 'A Propos', subPages: [
+                { path: '/A-propos/sejours', text: 'Séjours' },
+                { path: '/A-propos/hotel', text: 'Hôtel' },
+                { path: '/A-propos/clinique', text: 'Clinique' }
+              ] },
+              { path: '/Intervention', text: 'Intervention', subPages: [
+                { path: '/Intervention/page1', text: 'Page 1' },
+                { path: '/Intervention/page2', text: 'Page 2' },
+                { path: '/Intervention/page3', text: 'Page 3' }
+              ] },
+              { path: '/Blog', text: 'Blog' },
+              { path: '/Contact', text: 'Contact' }
+            ].map((item, index) => (
+              <div key={item.path}>
+                {item.subPages ? (
+                  <div className="relative">
+                    <span
+                      className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-green-500 hover:font-semibold"
+                      onClick={() => handleSubPagesToggle(index)}
+                    >
+                      <span>{item.text}</span>
+                      <AiOutlineDown className="w-4 h-4 ml-1" />
+                    </span>
+                    {showSubPages === index && (
+                      <ul className="block left-0 mt-2 bg-white shadow-lg rounded-lg">
+                        {item.subPages.map((subPage) => (
+                          <li key={subPage.path}>
+                            <NavLink
+                              to={subPage.path}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                              {subPage.text}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
+                  <NavLink
+                    to={item.path}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-green-500 hover:font-semibold"
+                  >
+                    {item.text}
+                  </NavLink>
+                )}
+              </div>
             ))}
           </div>
         </div>

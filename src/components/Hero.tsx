@@ -1,39 +1,40 @@
-import styles from "@/styles"
-import { Link } from "react-router-dom"
-import { Button } from "./ui/button"
-import { motion } from "framer-motion"
-import { profile } from "@/assets"
+import { egypt} from "@/assets";
+import { Carousel } from "flowbite-react";
 
 
 const Hero = () => (
-  <section id="home" className={`${styles.paddingY} flex flex-col md:flex-row mt-24 md:mt-14 items-center padding`}>
-
-    <div className="flex flex-col flex-1 items-center md:items-start sm:px-16 px-6">
-
-      <div className="flex flex-row justify-center items-center w-full">
-
-        <h1 className="flex-1 font-poppins text-center md:text-left font-bold text-[43px] leading-[75px]">
-          <span className="text-zinc-800 text-[43px] font-semibold tracking-tight">Accompagnement</span>
-          <br />
-          <span className="text-green-400 ">Tout au long de votre Parcours Médical</span>
-        </h1>
-
+  <Carousel slideInterval={6000} indicators={false} leftControl={false} rightControl={false}>
+    <div className="relative h-[800px]">
+      <img src={egypt} alt="profile" className="w-full h-full object-cover" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold">Accompagnement Tout au long de votre Parcours Médical</h1>
+          <p className="mt-4">Chez Waldari, nous facilitons l'accès aux meilleurs soins de santé en Égypte, avec des réductions sur les billets de voyage et l'obtention de visas en seulement 3 jours.</p>
+          <button className="mt-8 bg-primary text-white py-3 px-6 rounded-lg hover:bg-green-500">Contactez-nous</button>
+        </div>
       </div>
-
-      <p className={`${styles.paragraph} max-w-[470px] mt-6 text-center md:text-left`}>
-        Chez Waldari, nous facilitons l'accès aux meilleurs soins de santé en Égypte, avec des réductions sur les billets de voyage et l'obtention de visas en seulement 3 jours.
-      </p>
-
-      <Link to={`/contact`}>
-        <Button className="font-poppins hover:text-green-400 font-semibold uppercase mt-8 rounded-md bg-primary text-white p-4">Contactez-nous</Button>
-      </Link>
     </div>
-
-    <motion.div animate={{ y: [0, 25, 25, 0] }} transition={{ repeat: Infinity, duration: 3 }} id='heroimage' className={`flex-1 flex ${styles.flexCenter} md:my-0 my-14 relative`}>
-      <img src={profile} className="w-[100%] h-[100%] md:w-[90%] md:h-[90%] relative" alt="Medical Professionals" />
-    </motion.div>
-
-  </section>
+    <div className="relative h-[800px]">
+    <img src={egypt} alt="profile" className="w-full h-full object-cover" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold">Votre Destination pour des Soins Médicaux de Qualité</h1>
+          <p className="mt-4">Découvrez les avantages de choisir l'Égypte pour vos besoins médicaux et profitez d'une expérience de soins de santé exceptionnelle.</p>
+          <button className="mt-8 bg-primary text-white py-3 px-6 rounded-lg hover:bg-green-500">En savoir plus</button>
+        </div>
+      </div>
+    </div>
+    <div className="relative h-[800px]">
+    <img src={egypt} alt="profile" className="w-full h-full object-cover" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold">Choix d'Hôpitaux Adapté à vos Besoins</h1>
+          <p className="mt-4">Nous vous offrons une sélection d'hôpitaux de renom en Égypte, avec des équipements de pointe et des professionnels de la santé expérimentés.</p>
+          <button className="mt-8 bg-primary text-white py-3 px-6 rounded-lg hover:bg-green-500">Explorer les Hôpitaux</button>
+        </div>
+      </div>
+    </div>
+  </Carousel>
 );
 
 export default Hero;

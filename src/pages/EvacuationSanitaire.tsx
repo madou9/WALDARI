@@ -2,7 +2,7 @@ import { coutSoin, egypt, evac, evacuationIcon, sup24, tourisMedi } from '@/asse
 import Footer from '@/components/Footer';
 import styles from '@/styles';
 import { Link } from 'react-router-dom';
-import { Card } from 'flowbite-react';
+import { Card, Carousel } from 'flowbite-react';
 import CTA from '@/components/CTA';
 
 type Props = {
@@ -29,7 +29,20 @@ const BlogCard = ({ category, title, photo, message }: Props) => (
 
 const EvacuationSanitaire = () => {
   return (
+
     <div className='bg-white w-full overflow-hidden'>
+        <Carousel slideInterval={6000}>
+    <div className="relative h-[500px]">
+      <img src={evacuationIcon} alt="evacuationIcon" className="w-full h-full object-cover" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold">Accompagnement Tout au long de votre Parcours Médical</h1>
+          <p className="mt-4">Chez Waldari, nous facilitons l'accès aux meilleurs soins de santé en Égypte, avec des réductions sur les billets de voyage et l'obtention de visas en seulement 3 jours.</p>
+          <button className="mt-8 bg-primary text-white py-3 px-6 rounded-lg hover:bg-green-500">Contactez-nous</button>
+        </div>
+      </div>
+    </div>
+  </Carousel>
       {/* Section avec les informations */}
       <section className={`${styles.paddingY} ${styles.flexCenter} flex-col px-4 relative`}>
         <div className='flex flex-col min-h-screen'>
