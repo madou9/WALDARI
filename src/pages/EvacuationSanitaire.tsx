@@ -39,7 +39,7 @@ const EvacuationSanitaire = () => {
           <div className={`${styles.boxWidth}`}>
                     <div className='flex flex-col justify-center text-center gap-3 items-center w-full px-4 mb-7 mt-12'>
                         <h1 className={`px-2 md:w-[70%] font-poppins text-center font-bold text-[25px] md:text-[40px] text-gray-900 w-full`}>
-                            <span className='text-primary'> A Propos de l'Evacuation sanitaire</span>
+                            <span className='text-green-600'> A Propos de l'Evacuation sanitaire</span>
                         </h1>
                         <p className='font-poppins text-gray-600'>
                             Waldari vous accompagne tout au long du processus d'évacuation sanitaire, assurant un transfert sûr et efficace vers un établissement de soins approprié, que ce soit à l'échelle nationale ou internationale.
@@ -53,7 +53,7 @@ const EvacuationSanitaire = () => {
                             <BlogCard title={'Coût des Soins Médicaux'} photo={coutSoin} category={'Soins'}
                                 message={'L\'Égypte compte environ 600 grands hôpitaux de niveau international. Parallèlement, le coût des soins médicaux est de loin plus faible comparativement à d\'autres pays. Tout comme le coût de la vie et surtout l\'accueil des touristes très peu soumis aux comportements racistes.'} />
                             <BlogCard title={'Transparence des Coûts'} photo={tourisMedi} category={'Transparence'}
-                                message={'L\'Égypte a tous les moyens pour être la première destination pour le tourisme médical en Afrique et au Moyen-Orient. Le pays a énormément investi dans ce secteur au point d\'en faire la première destination dans le tourisme de la santé.'} />
+                                message={'Chaque évacuation donne lieu à un ensemble de services variés. qui sont tous décrits en details dans le devis avec leur coût associés'} />
                             <BlogCard title={'Un Réseau International'} photo={egypt} category={'Reseaux'}
                                 message={'Des relations avec les meilleurs établissements, en fonction des pathologies, pour faciliter la réception des patients évacués.'} />
                             <BlogCard title={'Support 24h/24'} photo={sup24} category={'Support'}
