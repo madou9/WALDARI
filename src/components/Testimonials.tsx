@@ -8,7 +8,7 @@ const Testimonials = () => {
     <section>
       <div className='w-full flex justify-center text-center items-center md:flex-row flex-col mb-0 relative z-[1]'>
         <h1 className={`px-2 ${styles.heading2}`}>
-          See what people are saying <br className='sm:block hidden' /> about us
+          Regards ce dont les autres disent <br className='sm:block hidden' /> A propos de nous
         </h1>
       </div>
 
