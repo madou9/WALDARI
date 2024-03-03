@@ -15,6 +15,10 @@ import facebook from "./black-facebook.png"
 import instagram from "./black-instagram.png"
 import twitter from "./black-twitter.png"
 import evacuationIcon from "./EvaImage.jpeg"
+import coutSoin from "./cout_soin_medi.jpeg"
+import tourisMedi from "./tourisme_medical.jpeg"
+import sup24 from "./support.jpeg"
+import evac from "./evacuatio.jpeg"
 
 export {
     menu,
@@ -33,5 +37,9 @@ export {
     facebook,
     instagram,
     twitter,
-    evacuationIcon
+    evacuationIcon,
+    coutSoin,
+    tourisMedi,
+    sup24,
+    evac
 }
