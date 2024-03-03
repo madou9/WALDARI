@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import Layout from "./layouts/Layout"
 import { AboutUse, Home } from "./pages"
 import EvacuationSanitaire from "./pages/EvacuationSanitaire"
+import Sejours from "./pages/Sejours"
 
 
 const AppRouters = () => {
@@ -11,9 +12,7 @@ const AppRouters = () => {
         <Route index element={<Home />} />
         <Route path="/Service" element={<AboutUse />} />
         <Route path="/Evacuation-Sanitaire" element={<EvacuationSanitaire />} />
-        {/* <Route path="/Evacuation-Sanitaire" element={<Evacuation />} />
-        <Route path="/Formulaire" element={<Formulaire />}/>
-        <Route path="/Service-offert" element={<Services />} /> */}
+        <Route path="/A-propos/sejours" element={<Sejours />} />
         <Route path="*" element={<Navigate to="/"/>} />
         </Route>
     </Routes>

@@ -90,8 +90,7 @@ const NavBar = () => {
                   ) : (
                     <NavLink
                       to={item.path}
-                      className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}
-                    >
+                      className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}>
                       {item.text}
                     </NavLink>
                   )}

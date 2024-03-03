@@ -31,7 +31,7 @@ const EvacuationSanitaire = () => {
   return (
 
     <div className='bg-white w-full overflow-hidden'>
-        <Carousel slideInterval={6000}>
+    <Carousel slideInterval={6000}>
     <div className="relative h-[500px]">
       <img src={evacuationIcon} alt="evacuationIcon" className="w-full h-full object-cover" />
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
