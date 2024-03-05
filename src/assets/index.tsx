@@ -22,6 +22,8 @@ import evac from "./evacuatio.jpeg"
 import medecine3 from "./medecine_slide2.avif"
 import medecine2 from "./medecine_slide3.jpeg"
 import medecine1 from "./medecine_slide1.jpeg"
+import medecine4 from "./medecine_sejour.jpeg"
+import sejour from "./sejour.jpeg"
 
 export {
     menu,
@@ -47,5 +49,7 @@ export {
     evac,
     medecine3,
     medecine2,
-    medecine1
+    medecine1,
+    medecine4,
+    sejour
 }

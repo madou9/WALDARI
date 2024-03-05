@@ -57,7 +57,7 @@ const AboutUse = () => {
             </section>
 
            {/* Section sur l'entreprise et sa mission */}
-<section className={`${styles.paddingY} flex flex-col md:flex-row px-4 md:px-0`}>
+<section className={`${styles.paddingY} flex flex-col md:flex-row px-4 md:px-0 container`}>
     {/* Texte d'introduction */}
     <div className={`${styles.flexStart} flex-1 flex-col`}>
         <h2 className='text-green-400 font-bold font-poppins xs:text-[48px] text-[40px] w-full'>
