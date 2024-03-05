@@ -24,6 +24,8 @@ import medecine2 from "./medecine_slide3.webp"
 import medecine1 from "./medecine_slide1.jpeg"
 import medecine4 from "./medecine_sejour.jpeg"
 import sejour from "./sejour.jpeg"
+import logo from "./ministere_santé.jpeg"
+import logoAfrique from "./africa.png"
 
 export {
     menu,
@@ -51,5 +53,7 @@ export {
     medecine2,
     medecine1,
     medecine4,
-    sejour
+    sejour,
+    logo,
+    logoAfrique
 }

@@ -2,6 +2,7 @@ import { RiMenu5Line } from "react-icons/ri";
 import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { logo, logoAfrique } from "@/assets";
 
 const NavBar = () => {
   const { pathname } = useLocation();
@@ -17,12 +18,17 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="w-full fixed top-0 pt-5 bg-white shadow-md z-[5]">
+    <nav className="w-full fixed top-0 pt-6 bg-white shadow-md z-[5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <Link to={'/'} className="text-green-500 font-poppins font-bold text-2xl">
-            WALDARI
-          </Link>
+        <div className="flex justify-between items-center py-10">
+        <Link to={'/'} className="flex items-center">
+          <img src={logo} alt="Ministere-logo" className='w-12 h-13 px-15 py-15 mr-2' />
+          <img src={logoAfrique} alt="Ministere-logo" className='w-12 h-12 mr-2' />
+          <div>
+            <p className="text-green-500 font-poppins font-bold text-2xl">WALDARI</p>
+            <p className="text-xs text-gray-500">ALSAFWA GROUP</p>
+          </div>
+        </Link>
           <div className="md:hidden">
             <button
               type="button"
