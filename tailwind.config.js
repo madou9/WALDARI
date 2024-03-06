@@ -19,7 +19,7 @@ export default{
     },
     extend: {
       colors: { 
-        secondaryBackground: "#00002B",
+        secondaryBackground: "#f8f8f8",
         dimBlue: "#2A63E2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

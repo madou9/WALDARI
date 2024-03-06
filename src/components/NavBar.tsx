@@ -1,16 +1,29 @@
 import { RiMenu5Line } from "react-icons/ri";
 import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { logo, logoAfrique } from "@/assets";
 
 const NavBar = () => {
   const { pathname } = useLocation();
   const [toggle, setToggle] = useState(false);
   const [showSubPages, setShowSubPages] = useState<number | null>(null); // Définir le type de showSubPages
+  const subMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setToggle(false);
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (subMenuRef.current && !subMenuRef.current.contains(event.target as Node)) {
+        setShowSubPages(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [pathname]);
 
   const handleSubPagesToggle = (index: number) => { // Définir le type de index
@@ -44,7 +57,7 @@ const NavBar = () => {
             </button>
           </div>
           <div className="hidden md:flex-1 md:flex md:items-center md:justify-end">
-            <ul className="flex items-center space-x-8">
+            <ul className="flex items-center space-x-8 ">
               {[
                 { path: '/', text: 'Accueil' },
                 // { path: '/Services', text: 'Services' },
@@ -71,7 +84,7 @@ const NavBar = () => {
                         className={`${pathname.startsWith(item.path) ? 'font-semibold text-green-500' : 'text-black'} flex items-center justify-between hover:text-green-500 hover:font-semibold`}
                         onClick={() => handleSubPagesToggle(index)}
                       >
-                        <div className="flex">
+                        <div className="flex ">
                           <span>{item.text}</span>
                           <div className="mt-1">
                             <AiOutlineDown className="w-4 h-4 ml-1" />
@@ -96,7 +109,7 @@ const NavBar = () => {
                   ) : (
                     <NavLink
                       to={item.path}
-                      className={`${pathname === item.path ? 'font-semibold text-green-500' : 'text-black'} hover:text-green-500 hover:font-semibold`}>
+                      className={`${pathname === item.path ? 'font-semibold bg-green-600 py-3 px-3' : 'text-black'} hover:text-green-500  hover:font-semibold`}>
                       {item.text}
                     </NavLink>
                   )}

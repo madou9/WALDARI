@@ -15,7 +15,7 @@ const Home = () => {
     <div className='bg-white w-full overflow-hidden'>
 
       <div className={`bg-white ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
+        <div className={`w-full`}>
             <Hero />
             <Stats />
             <Secteur />
