@@ -1,30 +1,13 @@
 import { RiMenu5Line } from "react-icons/ri";
 import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { logo, logoAfrique } from "@/assets";
 
 const NavBar = () => {
   const { pathname } = useLocation();
   const [toggle, setToggle] = useState(false);
   const [showSubPages, setShowSubPages] = useState<number | null>(null); // Définir le type de showSubPages
-  const subMenuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setToggle(false);
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (subMenuRef.current && !subMenuRef.current.contains(event.target as Node)) {
-        setShowSubPages(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [pathname]);
 
   const handleSubPagesToggle = (index: number) => { // Définir le type de index
     setShowSubPages((prev) => (prev === index ? null : index));
@@ -98,6 +81,7 @@ const NavBar = () => {
                               <NavLink
                                 to={subPage.path}
                                 className="block px-4 py-2 text-sm text-white bg-green-600 hover:bg-green-500"
+                                onClick={() => setShowSubPages(null)}
                               >
                                 {subPage.text}
                               </NavLink>
@@ -109,7 +93,8 @@ const NavBar = () => {
                   ) : (
                     <NavLink
                       to={item.path}
-                      className={`${pathname === item.path ? 'font-semibold bg-green-600 py-3 px-3' : 'text-black'} hover:text-green-500  hover:font-semibold`}>
+                      className={`${pathname === item.path ? 'font-semibold bg-green-600 py-3 px-3' : 'text-black'} hover:text-green-500  hover:font-semibold`}
+                      onClick={() => setShowSubPages(null)}>
                       {item.text}
                     </NavLink>
                   )}
@@ -161,6 +146,7 @@ const NavBar = () => {
                             <NavLink
                               to={subPage.path}
                               className="block px-4 py-2 text-sm text-white bg-green-600 hover:text-green-500"
+                              onClick={() => setShowSubPages(null)}
                             >
                               {subPage.text}
                             </NavLink>
@@ -173,6 +159,7 @@ const NavBar = () => {
                   <NavLink
                     to={item.path}
                     className="block px-3 py-2 rounded-md text-base font-medium text-white  hover:font-semibold"
+                    onClick={() => setShowSubPages(null)}
                   >
                     {item.text}
                   </NavLink>
