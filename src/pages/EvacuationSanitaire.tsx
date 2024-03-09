@@ -1,9 +1,9 @@
-import { coutSoin, egypt, evac, evacuationIcon, sup24, tourisMedi } from '@/assets';
-import Footer from '@/components/Footer';
+import { ambulance, coutSoin, egypt, evac, tourisMedi, urgence } from '@/assets';
+// import Footer from '@/components/Footer';
 import styles from '@/styles';
 import { Link } from 'react-router-dom';
-import { Card, Carousel } from 'flowbite-react';
-import CTA from '@/components/CTA';
+import { Card } from 'flowbite-react';
+// import CTA from '@/components/CTA';
 
 type Props = {
   category: string,
@@ -30,8 +30,8 @@ const BlogCard = ({ category, title, photo, message }: Props) => (
 const EvacuationSanitaire = () => {
   return (
 
-    <div className='bg-white w-full overflow-hidden'>
-    <Carousel slideInterval={6000}>
+    <div className=' w-full overflow-hidden bg-whiteGray'>
+    {/* <Carousel slideInterval={6000}>
     <div className="relative h-[500px]">
       <img src={evacuationIcon} alt="evacuationIcon" className="w-full h-full object-cover" />
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
@@ -42,12 +42,12 @@ const EvacuationSanitaire = () => {
         </div>
       </div>
     </div>
-  </Carousel>
+  </Carousel> */}
       {/* Section avec les informations */}
       <section className={`${styles.paddingY} ${styles.flexCenter} flex-col px-4 relative`}>
         <div className='flex flex-col min-h-screen'>
           {/* Logo */}
-          <img src={evacuationIcon} className='w-full mb-8' alt='Evacuation Sanitaire' />
+          {/* <img src={evacuationIcon} className='w-full mb-8' alt='Evacuation Sanitaire' /> */}
           {/* Informations */}
           <div className={`${styles.boxWidth}`}>
                     <div className='flex flex-col justify-center text-center gap-3 items-center w-full px-4 mb-7 mt-12'>
@@ -56,6 +56,9 @@ const EvacuationSanitaire = () => {
                         </h1>
                         <p className='font-poppins text-gray-600'>
                             Waldari vous accompagne tout au long du processus d'évacuation sanitaire, assurant un transfert sûr et efficace vers un établissement de soins approprié, que ce soit à l'échelle nationale ou internationale.
+                        </p>
+                        <p className='font-poppins text-gray-600'>
+                          Les cas d'évacuations sanitaires sont pris avec un grand sérieux, en fonction de l’urgence et de la criticité du cas les dispositions nécessaires seront mises en place pour une prise en charge rapide et efficace du patient dès son arrivée En Egypte.
                         </p>
 
                     </div>
@@ -69,25 +72,27 @@ const EvacuationSanitaire = () => {
                                 message={'Chaque évacuation donne lieu à un ensemble de services variés. qui sont tous décrits en details dans le devis avec leur coût associés'} />
                             <BlogCard title={'Un Réseau International'} photo={egypt} category={'Reseaux'}
                                 message={'Des relations avec les meilleurs établissements, en fonction des pathologies, pour faciliter la réception des patients évacués.'} />
-                            <BlogCard title={'Support 24h/24'} photo={sup24} category={'Support'}
+                            <BlogCard title={'Support 24h/24'} photo={urgence} category={'urgence'}
                                 message={'De l\'assistance pour obtenir le visa à la réception de l\'équipe médicale et à l\'arrivée dans le service approprié.'} />
+                            <BlogCard title={'Support 24h/24'} photo={ambulance} category={'Support'}
+                                message={'Toutes les dispositions seront prises en fonction de létat du patient, même la récupération du patient sur la piste dès l’atterrissage de l’avion.'} />
                         </div>
                     </div>
                 </div>
           <div className={`${styles.flexStart}`}>
-         <div className={`${styles.boxWidth}`}>
+         {/* <div className={`${styles.boxWidth}`}>
            <CTA />
-         </div>
+         </div> */}
        </div>
         </div>
       </section>
 
-        {/* footer */}
+        {/* footer
         <div className={`${styles.flexStart}`}>
          <div className={`${styles.boxWidth}`}>
            <Footer />
          </div>
-       </div>
+       </div> */}
     </div>
   );
 };

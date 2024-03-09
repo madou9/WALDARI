@@ -69,7 +69,7 @@ const AboutUse = () => {
     </div>
     {/* Image illustrative */}
     <div className={`${styles.flexCenter} flex flex-1 md:ml-10 ml-0 md:mt-0 mt-10 relative`}>
-        <img src={mission} alt="Mission" className='w-[100%] h-[100%] md:w-[75%] md:px-0' />
+        <img src={mission} alt="Mission" className='w-[100%] h-[100%] md:w-[100%] md:px-0' />
     </div>
 </section>
 
@@ -77,7 +77,7 @@ const AboutUse = () => {
 <section className={`flex md:flex-row flex-col-reverse ${styles.paddingY} px-4 md:px-0`}>
     {/* Image illustrative */}
     <div className={`flex-1 flex md:mr-10 mr-0 md:mt-0 mt-10 relative`}>
-        <img src={mission} alt="Mission" className="w-[100%] h-[100%] md:w-[75%] relative" />
+        <img src={mission} alt="Mission" className="w-[100%] h-[100%]  md:w-[100%] relative" />
     </div>
     {/* Texte sur la mission et la vision */}
     <div className={`flex-1 ${styles.flexStart} flex-col`}>
@@ -104,7 +104,7 @@ const AboutUse = () => {
     </div>
     {/* Image illustrative */}
     <div className={`flex-1 flex ${styles.flexCenter} md:ml-10 ml-0 md:mt-0 mt-10 relative`}>
-        <img src={mission} alt="mission" className='w-[100%] h-[100%] md:w-[75%] md:px-0' />
+        <img src={mission} alt="mission" className='w-[100%] h-[100%] md:w-[100%] md:px-0' />
     </div>
 </section>
 

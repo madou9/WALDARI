@@ -17,7 +17,6 @@ import twitter from "./black-twitter.png"
 import evacuationIcon from "./EvaImage.jpeg"
 import coutSoin from "./cout_soin_medi.jpeg"
 import tourisMedi from "./tourisme_medical.jpeg"
-import sup24 from "./support.jpeg"
 import evac from "./evacuatio.jpeg"
 import medecine3 from "./partenair.jpeg"
 import medecine2 from "./medecine_slide3.webp"
@@ -27,6 +26,8 @@ import sejour from "./sejour.jpeg"
 import logo from "./ministr.jpeg"
 import logoAfrique from "./carte_afrique.webp"
 import avion from "./avion_egypte.jpeg"
+import urgence from "./urgence.jpeg"
+import ambulance from "./ambulence.png"
 
 export {
     menu,
@@ -48,7 +49,6 @@ export {
     evacuationIcon,
     coutSoin,
     tourisMedi,
-    sup24,
     evac,
     medecine3,
     medecine2,
@@ -57,5 +57,7 @@ export {
     sejour,
     logo,
     logoAfrique,
-    avion
+    avion,
+    urgence,
+    ambulance
 }

@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials"
 import styles from "@/styles"
 import { motion } from "framer-motion"
 import { AboutUse } from "."
+import EvacuationSanitaire from "./EvacuationSanitaire"
 
 
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
        <div className={`${styles.flexStart}`}>
          <div className={`${styles.boxWidth}`}>
            <CTA />
+            <EvacuationSanitaire />
            <AboutUse />
          </div>
        </div>
