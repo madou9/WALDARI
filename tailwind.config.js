@@ -7,6 +7,7 @@ export default{
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     'node_modules/flowbite-react/lib/esm/**/*.js',
+    './node_modules/tw-elements/js/**/*.js',
   ],
   prefix: "",
   theme: {
@@ -66,5 +67,5 @@ export default{
       },
     },
   },
-  plugins: [require("tailwindcss-animate","flowbite/plugin")],
+  plugins: [require("tailwindcss-animate","flowbite/plugin", "tw-elements/plugin.cjs")],
 }
